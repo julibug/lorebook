@@ -2,8 +2,6 @@
 
 A web app for writers to organize their story worlds — characters, bestiary, outline, places and notes, with multi-book support and live sync across devices.
 
-> Built as a tool for working on my own vampire novel. 🦇
-
 ## ✨ Features
 
 - **Multiple books** — after signing in you pick a book from your list; books can be added, renamed or deleted, and each keeps fully separate data
