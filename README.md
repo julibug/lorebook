@@ -1,14 +1,15 @@
-# 📚 Archiwum Książki
+# 📚 Lorebook
 
-Aplikacja webowa dla pisarzy do porządkowania świata powieści — postacie, bestiariusz, plan wydarzeń, miejsca i notatki w jednym miejscu, z synchronizacją między urządzeniami na żywo.
+Aplikacja webowa dla pisarzy do porządkowania świata powieści — postacie, bestiariusz, plan wydarzeń, miejsca i notatki, z obsługą wielu książek i synchronizacją między urządzeniami na żywo.
 
 > Projekt powstał jako narzędzie do pracy nad moją własną powieścią o wampirach. 🦇
 
 ## ✨ Funkcje
 
+- **Wiele książek** — po zalogowaniu wybierasz książkę z listy; każdą można dodać, zmienić jej tytuł lub usunąć, a każda ma całkowicie osobne dane
 - **Kartoteka postaci** — imię, moce, opis i zdjęcie każdej postaci
 - **Bestiariusz** — katalog stworzeń zamieszkujących świat powieści
-- **Plan wydarzeń** — rozdziały z listą wydarzeń, układane przeciąganiem (drag & drop)
+- **Plan wydarzeń (Outline)** — rozdziały z listą wydarzeń, układane przeciąganiem (drag & drop)
 - **Miejsca** — lokacje z notatkami i galerią zdjęć
 - **Notatki** — szybkie zapiski z wyszukiwarką
 - **Ostatnie zmiany** — dziennik aktywności pokazujący, co ostatnio edytowano
@@ -30,7 +31,7 @@ Aplikacja webowa dla pisarzy do porządkowania świata powieści — postacie, b
 | Baza danych | Firebase Realtime Database |
 | Hosting | GitHub Pages |
 
-Całość mieści się w pojedynczym pliku `index.html` — bez procesu budowania, bez zależności do instalowania.
+Całość mieści się w pojedynczym pliku `index.html` — bez procesu budowania, bez zależności do instalowania. Interfejs aplikacji jest w języku angielskim, a układ dostosowuje się do ekranu telefonu.
 
 ## 🚀 Uruchomienie
 

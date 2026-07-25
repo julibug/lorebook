@@ -7,8 +7,8 @@
 <meta name="theme-color" content="#181818">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Archiwum">
-<title>Archiwum Książki</title>
+<meta name="apple-mobile-web-app-title" content="Lorebook">
+<title>Lorebook</title>
 <style>:root {
   color-scheme: light dark;
   background-color: var(--background) !important;
@@ -748,22 +748,22 @@ html>body{padding:0}</style>
 #writer-notebook .confirm-layer{display:none;position:absolute;inset:0;background:rgba(0,0,0,.58);align-items:center;justify-content:center;padding:20px;border-radius:18px}#writer-notebook .confirm-layer.show{display:flex}#writer-notebook .confirm-box{max-width:340px;padding:20px;border:1px solid rgba(200,166,106,.55);border-radius:14px;background:#211b20;color:var(--ink)}#writer-notebook .confirm-box h2{margin-bottom:8px}#writer-notebook .confirm-box p{color:var(--muted);font:.9rem/1.45 system-ui,sans-serif}.confirm-actions{display:flex;gap:9px;margin-top:16px}.confirm-actions .confirm-delete{background:#7b3f4e;border-color:#7b3f4e}
 </style>
 <div class="shell">
-<header><h1>Archiwum postaci</h1></header>
-<nav aria-label="Sekcje"><button type="button" aria-selected="true" data-view="pulpit">Pulpit</button><button type="button" aria-selected="false" data-view="postacie">Postacie</button><button type="button" aria-selected="false" data-view="stworzenia">Bestiariusz</button><button type="button" aria-selected="false" data-view="plan">Plan wydarze&#324;</button><button type="button" aria-selected="false" data-view="swiat">&#346;wiat</button><button type="button" aria-selected="false" data-view="notatki">Notatki</button></nav>
-<section id="pulpit" class="view active"><div class="panel"><h2>Ostatnie zmiany</h2><div id="activity-list" class="chapter-detail">Brak zmian.</div></div></section>
-<section id="postacie" class="view"><div class="grid"><div class="panel"><h2>Postacie</h2><div id="characters"></div><button id="open-character" class="add" type="button">+ Dodaj postać</button><form id="character-form" class="new-form"><input id="character-name" required placeholder="Imię postaci" aria-label="Imię postaci"><p id="character-error" class="char-error" role="alert"></p><label class="muted" for="character-photo">Zdjęcie</label><input id="character-photo" type="file" accept="image/*" aria-label="Zdjęcie postaci"><div id="character-photo-edit" class="thumbs" aria-label="Wybrane zdjęcie"></div><textarea id="character-powers" placeholder="Moce" aria-label="Moce postaci"></textarea><textarea id="character-description" placeholder="Notatki" aria-label="Notatki postaci"></textarea><button class="primary" type="submit">Zapisz postać</button></form></div><div class="panel"><h2 id="character-heading">Wybierz postać</h2><div id="character-detail" class="chapter-detail">Kliknij postać z listy, aby zobaczyć jej kartę.</div></div></div></section>
-<section id="stworzenia" class="view"><div class="grid"><div class="panel"><h2>Stworzenia</h2><div id="beasts"></div><button id="open-beast" class="add" type="button">+ Dodaj stworzenie</button><form id="beast-form" class="new-form"><input id="beast-name" required placeholder="Nazwa stworzenia" aria-label="Nazwa stworzenia"><label class="muted" for="beast-photo">Zdjęcie</label><input id="beast-photo" type="file" accept="image/*" aria-label="Zdjęcie stworzenia"><div id="beast-photo-edit" class="thumbs" aria-label="Wybrane zdjęcie"></div><textarea id="beast-description" placeholder="Opis" aria-label="Opis stworzenia"></textarea><button class="primary" type="submit">Zapisz stworzenie</button></form></div><div class="panel"><h2 id="beast-heading">Wybierz stworzenie</h2><div id="beast-detail" class="chapter-detail">Kliknij stworzenie z listy, aby zobaczyć jego kartę.</div></div></div></section>
-<section id="plan" class="view"><div class="grid"><div class="panel"><h2>Plan wydarze&#324;</h2><p class="hint">Z&#322;ap rozdzia&#322; i przeci&#261;gnij go, aby zmieni&#263; kolejno&#347;&#263;.</p><div id="chapters"></div><button id="open-chapter" class="add" type="button">+ Dodaj rozdzia&#322;</button><form id="chapter-form" class="new-form"><input id="chapter-title" required placeholder="Tytu&#322; rozdzia&#322;u" aria-label="Tytu&#322; rozdzia&#322;u"><textarea id="chapter-events" placeholder="Opis wydarze&#324;" aria-label="Wydarzenia rozdzia&#322;u"></textarea><button class="primary" type="submit">Zapisz rozdzia&#322;</button></form></div><div class="panel"><h2 id="chapter-heading">Wybierz rozdzia&#322;</h2><div id="chapter-detail" class="chapter-detail">Kliknij rozdzia&#322; z listy, aby zobaczy&#263; ca&#322;y skr&oacute;t wydarze&#324;.</div></div></div></section>
-<section id="swiat" class="view"><div class="grid"><div class="panel"><h2>Miejsca</h2><div id="places"></div><button id="open-place" class="add" type="button">+ Dodaj miejsce</button><form id="place-form" class="new-form"><input id="place-name" required placeholder="Nazwa miejsca" aria-label="Nazwa miejsca"><label class="muted" for="place-photos">Zdjęcia</label><input id="place-photos" type="file" accept="image/*" multiple aria-label="Zdjęcia miejsca"><div id="place-photo-edit" class="thumbs" aria-label="Wybrane zdjęcia"></div><textarea id="place-notes" placeholder="Notatki" aria-label="Notatki miejsca"></textarea><button class="primary" type="submit">Zapisz miejsce</button></form></div><div class="panel"><h2 id="place-heading">Wybierz miejsce</h2><div id="place-detail" class="chapter-detail">Kliknij miejsce z listy, aby zobaczyć galerię i notatki.</div></div></div></section><section id="notatki" class="view"><div class="grid"><div class="panel"><h2>Notatki</h2><input id="note-search" type="search" placeholder="Szukaj notatek..." aria-label="Szukaj notatek"><div id="notes"></div><p id="note-empty" class="muted" hidden>Brak notatek pasujących do wyszukiwania.</p><button id="open-note" class="add" type="button">+ Dodaj notatkę</button><form id="note-form" class="new-form"><input id="note-title" required placeholder="Tytuł notatki" aria-label="Tytuł notatki"><textarea id="note-body" placeholder="Treść" aria-label="Treść notatki"></textarea><button class="primary" type="submit">Zapisz notatkę</button></form></div><div class="panel"><h2 id="note-heading">Wybierz notatkę</h2><div id="note-detail" class="chapter-detail">Kliknij notatkę z listy, aby zobaczyć jej treść.</div></div></div></section>
+<header><h1>Lorebook</h1></header>
+<nav aria-label="Sections"><button type="button" aria-selected="true" data-view="pulpit">Dashboard</button><button type="button" aria-selected="false" data-view="postacie">Characters</button><button type="button" aria-selected="false" data-view="stworzenia">Bestiary</button><button type="button" aria-selected="false" data-view="plan">Outline</button><button type="button" aria-selected="false" data-view="swiat">World</button><button type="button" aria-selected="false" data-view="notatki">Notes</button></nav>
+<section id="pulpit" class="view active"><div class="panel"><h2>Recent changes</h2><div id="activity-list" class="chapter-detail">No changes yet.</div></div></section>
+<section id="postacie" class="view"><div class="grid"><div class="panel"><h2>Characters</h2><div id="characters"></div><button id="open-character" class="add" type="button">+ Add character</button><form id="character-form" class="new-form"><input id="character-name" required placeholder="Character name" aria-label="Character name"><p id="character-error" class="char-error" role="alert"></p><label class="muted" for="character-photo">Photo</label><input id="character-photo" type="file" accept="image/*" aria-label="Character photo"><div id="character-photo-edit" class="thumbs" aria-label="Selected photo"></div><textarea id="character-powers" placeholder="Powers" aria-label="Character powers"></textarea><textarea id="character-description" placeholder="Notes" aria-label="Character notes"></textarea><button class="primary" type="submit">Save character</button></form></div><div class="panel"><h2 id="character-heading">Select a character</h2><div id="character-detail" class="chapter-detail">Click a character on the list to see their card.</div></div></div></section>
+<section id="stworzenia" class="view"><div class="grid"><div class="panel"><h2>Creatures</h2><div id="beasts"></div><button id="open-beast" class="add" type="button">+ Add creature</button><form id="beast-form" class="new-form"><input id="beast-name" required placeholder="Creature name" aria-label="Creature name"><label class="muted" for="beast-photo">Photo</label><input id="beast-photo" type="file" accept="image/*" aria-label="Creature photo"><div id="beast-photo-edit" class="thumbs" aria-label="Selected photo"></div><textarea id="beast-description" placeholder="Description" aria-label="Creature description"></textarea><button class="primary" type="submit">Save creature</button></form></div><div class="panel"><h2 id="beast-heading">Select a creature</h2><div id="beast-detail" class="chapter-detail">Click a creature on the list to see its card.</div></div></div></section>
+<section id="plan" class="view"><div class="grid"><div class="panel"><h2>Outline</h2><p class="hint">Drag a chapter to change its order.</p><div id="chapters"></div><button id="open-chapter" class="add" type="button">+ Add chapter</button><form id="chapter-form" class="new-form"><input id="chapter-title" required placeholder="Chapter title" aria-label="Chapter title"><textarea id="chapter-events" placeholder="Events" aria-label="Chapter events"></textarea><button class="primary" type="submit">Save chapter</button></form></div><div class="panel"><h2 id="chapter-heading">Select a chapter</h2><div id="chapter-detail" class="chapter-detail">Click a chapter on the list to see its event summary.</div></div></div></section>
+<section id="swiat" class="view"><div class="grid"><div class="panel"><h2>Places</h2><div id="places"></div><button id="open-place" class="add" type="button">+ Add place</button><form id="place-form" class="new-form"><input id="place-name" required placeholder="Place name" aria-label="Place name"><label class="muted" for="place-photos">Photos</label><input id="place-photos" type="file" accept="image/*" multiple aria-label="Place photos"><div id="place-photo-edit" class="thumbs" aria-label="Selected photos"></div><textarea id="place-notes" placeholder="Notes" aria-label="Place notes"></textarea><button class="primary" type="submit">Save place</button></form></div><div class="panel"><h2 id="place-heading">Select a place</h2><div id="place-detail" class="chapter-detail">Click a place on the list to see its gallery and notes.</div></div></div></section><section id="notatki" class="view"><div class="grid"><div class="panel"><h2>Notes</h2><input id="note-search" type="search" placeholder="Search notes..." aria-label="Search notes"><div id="notes"></div><p id="note-empty" class="muted" hidden>No notes match your search.</p><button id="open-note" class="add" type="button">+ Add note</button><form id="note-form" class="new-form"><input id="note-title" required placeholder="Note title" aria-label="Note title"><textarea id="note-body" placeholder="Content" aria-label="Note content"></textarea><button class="primary" type="submit">Save note</button></form></div><div class="panel"><h2 id="note-heading">Select a note</h2><div id="note-detail" class="chapter-detail">Click a note on the list to see its content.</div></div></div></section>
 </div>
-<div id="delete-confirm" class="confirm-layer" role="dialog" aria-modal="true" aria-labelledby="confirm-title"><div class="confirm-box"><h2 id="confirm-title">Usun&#261;&#263; rozdzia&#322;?</h2><p>Tej czynno&#347;ci nie mo&#380;na cofn&#261;&#263;.</p><div class="confirm-actions"><button id="cancel-delete" type="button">Anuluj</button><button id="confirm-delete" class="confirm-delete" type="button">Usu&#324;</button></div></div></div>
+<div id="delete-confirm" class="confirm-layer" role="dialog" aria-modal="true" aria-labelledby="confirm-title"><div class="confirm-box"><h2 id="confirm-title">Delete this chapter?</h2><p>This action cannot be undone.</p><div class="confirm-actions"><button id="cancel-delete" type="button">Cancel</button><button id="confirm-delete" class="confirm-delete" type="button">Delete</button></div></div></div>
 <script>
-(()=>{const root=document.getElementById('writer-notebook');const popup=root.querySelector('#delete-confirm');let target=null;root.addEventListener('click',event=>{const button=event.target.closest('.delete');if(!button)return;event.stopImmediatePropagation();event.preventDefault();target=button.closest('.chapter-row');popup.classList.add('show')},true);root.querySelector('#cancel-delete').addEventListener('click',()=>{target=null;popup.classList.remove('show')});root.querySelector('#confirm-delete').addEventListener('click',()=>{if(target){const chapter=target.querySelector('.chapter');const heading=root.querySelector('#chapter-heading');const detail=root.querySelector('#chapter-detail');if(chapter&&heading&&heading.textContent===chapter.dataset.title){heading.textContent='Wybierz rozdział';detail.textContent='Kliknij rozdział z listy, aby zobaczyć cały skrót wydarzeń.'}target.remove();window.__arch&&window.__arch.log('plan',chapter?chapter.dataset.title:'','usunięcie',null)}target=null;popup.classList.remove('show')})})();
+(()=>{const root=document.getElementById('writer-notebook');const popup=root.querySelector('#delete-confirm');let target=null;root.addEventListener('click',event=>{const button=event.target.closest('.delete');if(!button)return;event.stopImmediatePropagation();event.preventDefault();target=button.closest('.chapter-row');popup.classList.add('show')},true);root.querySelector('#cancel-delete').addEventListener('click',()=>{target=null;popup.classList.remove('show')});root.querySelector('#confirm-delete').addEventListener('click',()=>{if(target){const chapter=target.querySelector('.chapter');const heading=root.querySelector('#chapter-heading');const detail=root.querySelector('#chapter-detail');if(chapter&&heading&&heading.textContent===chapter.dataset.title){heading.textContent='Select a chapter';detail.textContent='Click a chapter on the list to see its event summary.'}target.remove();window.__arch&&window.__arch.log('plan',chapter?chapter.dataset.title:'','deleted',null)}target=null;popup.classList.remove('show')})})();
 </script>
 <script>
-(()=>{const root=document.getElementById('writer-notebook');const tabs=root.querySelectorAll('nav button');const views=root.querySelectorAll('.view');tabs.forEach(tab=>tab.addEventListener('click',()=>{tabs.forEach(button=>button.setAttribute('aria-selected','false'));views.forEach(view=>view.classList.remove('active'));tab.setAttribute('aria-selected','true');root.querySelector('#'+tab.dataset.view).classList.add('active')}));const chapters=root.querySelector('#chapters');const heading=root.querySelector('#chapter-heading');const detail=root.querySelector('#chapter-detail');const form=root.querySelector('#chapter-form');const titleInput=root.querySelector('#chapter-title');const eventInput=root.querySelector('#chapter-events');let editing=null;function eventsOf(chapter){return chapter.dataset.events.split('|').filter(Boolean)}function showChapter(chapter){const events=eventsOf(chapter);heading.textContent=chapter.dataset.title;detail.innerHTML='<ul></ul>';events.forEach(event=>{const item=document.createElement('li');item.textContent=event;detail.querySelector('ul').append(item)})}function bindRow(row){const chapter=row.querySelector('.chapter');chapter.addEventListener('click',()=>showChapter(chapter));row.querySelector('.delete').addEventListener('click',()=>{if(heading.textContent===chapter.dataset.title){heading.textContent='Wybierz rozdzia\u0142';detail.textContent='Kliknij rozdzia\u0142 z listy, aby zobaczy\u0107 ca\u0142y skr\u00f3t wydarze\u0144.'}row.remove()});row.querySelector('.edit').addEventListener('click',()=>{editing=row;titleInput.value=chapter.dataset.title;eventInput.value=eventsOf(chapter).map(event=>'- '+event).join('\n');form.classList.add('show');titleInput.focus()});row.addEventListener('dragstart',()=>row.classList.add('dragging'));row.addEventListener('dragend',()=>row.classList.remove('dragging'))}function makeRow(title,events){const row=document.createElement('div');row.className='chapter-row';row.draggable=true;const chapter=document.createElement('button');chapter.type='button';chapter.className='chapter';chapter.dataset.title=title;chapter.dataset.events=events.join('|');const name=document.createElement('strong');name.textContent=title;chapter.append(name);const actions=document.createElement('div');actions.className='chapter-actions';actions.innerHTML='<button class="edit" type="button">Edytuj</button><button class="delete" type="button">Usu&#324;</button>';row.append(chapter,actions);bindRow(row);return row}chapters.querySelectorAll('.chapter-row').forEach(bindRow);chapters.addEventListener('dragover',event=>{event.preventDefault();const dragging=chapters.querySelector('.dragging');const next=[...chapters.querySelectorAll('.chapter-row:not(.dragging)')].find(row=>event.clientY<row.getBoundingClientRect().top+row.offsetHeight/2);if(dragging)chapters.insertBefore(dragging,next||null)});root.querySelector('#open-chapter').addEventListener('click',()=>{editing=null;form.reset();form.classList.toggle('show')});eventInput.addEventListener('keydown',event=>{if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();const at=eventInput.selectionStart;eventInput.value=eventInput.value.slice(0,at)+'\n- '+eventInput.value.slice(eventInput.selectionEnd);eventInput.selectionStart=eventInput.selectionEnd=at+3}});eventInput.addEventListener('focus',()=>{if(eventInput.value===''){eventInput.value='- ';eventInput.selectionStart=eventInput.selectionEnd=2}});form.addEventListener('submit',event=>{event.preventDefault();const events=eventInput.value.split('\n').map(line=>line.replace(/^-\s*/,'').trim()).filter(Boolean);if(editing){const chapter=editing.querySelector('.chapter');chapter.dataset.title=titleInput.value;chapter.dataset.events=events.join('|');chapter.querySelector('strong').textContent=titleInput.value;showChapter(chapter);window.__arch&&window.__arch.log('plan',chapter.dataset.title,'edycja',chapter);editing=null}else{const row=makeRow(titleInput.value,events);const cbtn=row.querySelector('.chapter');chapters.append(row);showChapter(cbtn);window.__arch&&window.__arch.log('plan',cbtn.dataset.title,'dodanie',cbtn)}form.reset();form.classList.remove('show')});window.__importChapters=items=>{chapters.innerHTML='';items.forEach(it=>chapters.append(makeRow(it.title,it.events||[])))};})();
+(()=>{const root=document.getElementById('writer-notebook');const tabs=root.querySelectorAll('nav button');const views=root.querySelectorAll('.view');tabs.forEach(tab=>tab.addEventListener('click',()=>{tabs.forEach(button=>button.setAttribute('aria-selected','false'));views.forEach(view=>view.classList.remove('active'));tab.setAttribute('aria-selected','true');root.querySelector('#'+tab.dataset.view).classList.add('active')}));const chapters=root.querySelector('#chapters');const heading=root.querySelector('#chapter-heading');const detail=root.querySelector('#chapter-detail');const form=root.querySelector('#chapter-form');const titleInput=root.querySelector('#chapter-title');const eventInput=root.querySelector('#chapter-events');let editing=null;function eventsOf(chapter){return chapter.dataset.events.split('|').filter(Boolean)}function showChapter(chapter){const events=eventsOf(chapter);heading.textContent=chapter.dataset.title;detail.innerHTML='<ul></ul>';events.forEach(event=>{const item=document.createElement('li');item.textContent=event;detail.querySelector('ul').append(item)})}function bindRow(row){const chapter=row.querySelector('.chapter');chapter.addEventListener('click',()=>showChapter(chapter));row.querySelector('.delete').addEventListener('click',()=>{if(heading.textContent===chapter.dataset.title){heading.textContent='Select a chapter';detail.textContent='Click a chapter on the list to see its event summary.'}row.remove()});row.querySelector('.edit').addEventListener('click',()=>{editing=row;titleInput.value=chapter.dataset.title;eventInput.value=eventsOf(chapter).map(event=>'- '+event).join('\n');form.classList.add('show');titleInput.focus()});row.addEventListener('dragstart',()=>row.classList.add('dragging'));row.addEventListener('dragend',()=>row.classList.remove('dragging'))}function makeRow(title,events){const row=document.createElement('div');row.className='chapter-row';row.draggable=true;const chapter=document.createElement('button');chapter.type='button';chapter.className='chapter';chapter.dataset.title=title;chapter.dataset.events=events.join('|');const name=document.createElement('strong');name.textContent=title;chapter.append(name);const actions=document.createElement('div');actions.className='chapter-actions';actions.innerHTML='<button class="edit" type="button">Edit</button><button class="delete" type="button">Delete</button>';row.append(chapter,actions);bindRow(row);return row}chapters.querySelectorAll('.chapter-row').forEach(bindRow);chapters.addEventListener('dragover',event=>{event.preventDefault();const dragging=chapters.querySelector('.dragging');const next=[...chapters.querySelectorAll('.chapter-row:not(.dragging)')].find(row=>event.clientY<row.getBoundingClientRect().top+row.offsetHeight/2);if(dragging)chapters.insertBefore(dragging,next||null)});root.querySelector('#open-chapter').addEventListener('click',()=>{editing=null;form.reset();form.classList.toggle('show')});eventInput.addEventListener('keydown',event=>{if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();const at=eventInput.selectionStart;eventInput.value=eventInput.value.slice(0,at)+'\n- '+eventInput.value.slice(eventInput.selectionEnd);eventInput.selectionStart=eventInput.selectionEnd=at+3}});eventInput.addEventListener('focus',()=>{if(eventInput.value===''){eventInput.value='- ';eventInput.selectionStart=eventInput.selectionEnd=2}});form.addEventListener('submit',event=>{event.preventDefault();const events=eventInput.value.split('\n').map(line=>line.replace(/^-\s*/,'').trim()).filter(Boolean);if(editing){const chapter=editing.querySelector('.chapter');chapter.dataset.title=titleInput.value;chapter.dataset.events=events.join('|');chapter.querySelector('strong').textContent=titleInput.value;showChapter(chapter);window.__arch&&window.__arch.log('plan',chapter.dataset.title,'edited',chapter);editing=null}else{const row=makeRow(titleInput.value,events);const cbtn=row.querySelector('.chapter');chapters.append(row);showChapter(cbtn);window.__arch&&window.__arch.log('plan',cbtn.dataset.title,'added',cbtn)}form.reset();form.classList.remove('show')});window.__importChapters=items=>{chapters.innerHTML='';items.forEach(it=>chapters.append(makeRow(it.title,it.events||[])))};})();
 </script>
-<style>#characters .character{border:0;background:transparent;border-radius:0;width:100%;text-align:left;padding:14px 0;cursor:pointer;color:var(--ink);font:inherit}#characters .character strong{display:block;font-size:1rem;font-weight:400}#characters .char-delete{color:#f1bcc2}#character-error{color:#f1bcc2;font:.8rem system-ui,sans-serif;margin:0;display:none}#character-error.show{display:block}#character-detail img{max-width:100%;border-radius:10px;margin:0 0 12px;display:block}#character-detail strong{display:block;margin-top:10px;color:var(--gold);font-weight:400}</style><div id="char-delete-confirm" class="confirm-layer" role="dialog" aria-modal="true" aria-labelledby="char-confirm-title"><div class="confirm-box"><h2 id="char-confirm-title">Usunąć postać?</h2><p>Tej czynności nie można cofnąć.</p><div class="confirm-actions"><button id="char-cancel-delete" type="button">Anuluj</button><button id="char-confirm-delete" class="confirm-delete" type="button">Usuń</button></div></div></div><script>
+<style>#characters .character{border:0;background:transparent;border-radius:0;width:100%;text-align:left;padding:14px 0;cursor:pointer;color:var(--ink);font:inherit}#characters .character strong{display:block;font-size:1rem;font-weight:400}#characters .char-delete{color:#f1bcc2}#character-error{color:#f1bcc2;font:.8rem system-ui,sans-serif;margin:0;display:none}#character-error.show{display:block}#character-detail img{max-width:100%;border-radius:10px;margin:0 0 12px;display:block}#character-detail strong{display:block;margin-top:10px;color:var(--gold);font-weight:400}</style><div id="char-delete-confirm" class="confirm-layer" role="dialog" aria-modal="true" aria-labelledby="char-confirm-title"><div class="confirm-box"><h2 id="char-confirm-title">Delete this character?</h2><p>This action cannot be undone.</p><div class="confirm-actions"><button id="char-cancel-delete" type="button">Cancel</button><button id="char-confirm-delete" class="confirm-delete" type="button">Delete</button></div></div></div><script>
 (()=>{
   const root=document.getElementById("writer-notebook");
   const list=root.querySelector("#characters");
@@ -777,15 +777,15 @@ html>body{padding:0}</style>
   const descInput=root.querySelector("#character-description");
   const errorEl=root.querySelector("#character-error");
   const popup=root.querySelector("#char-delete-confirm");
-  const DEFAULT_HEADING="Wybierz postać";
-  const DEFAULT_DETAIL="Kliknij postać z listy, aby zobaczyć jej kartę.";
+  const DEFAULT_HEADING="Select a character";
+  const DEFAULT_DETAIL="Click a character on the list to see their card.";
   let editing=null, workingPhoto="", deleteTarget=null;
   function renderCharPhoto(){
     photoStrip.innerHTML="";
     if(!workingPhoto)return;
     const wrap=document.createElement("div");wrap.className="thumb";
     const im=document.createElement("img");im.src=workingPhoto;im.alt="";
-    const rm=document.createElement("button");rm.type="button";rm.className="thumb-remove";rm.textContent="×";rm.setAttribute("aria-label","Usuń zdjęcie");
+    const rm=document.createElement("button");rm.type="button";rm.className="thumb-remove";rm.textContent="×";rm.setAttribute("aria-label","Remove photo");
     rm.addEventListener("click",()=>{workingPhoto="";renderCharPhoto();});
     wrap.append(im,rm);photoStrip.append(wrap);
   }
@@ -803,9 +803,9 @@ html>body{padding:0}</style>
     const powers=listOf(btn.dataset.powers);
     const desc=listOf(btn.dataset.description);
     if(btn.dataset.photo){const img=document.createElement("img");img.src=btn.dataset.photo;img.alt=btn.dataset.name;detail.append(img);}
-    if(powers.length)block("Moce",powers);
-    if(desc.length)block("Notatki",desc);
-    if(!btn.dataset.photo&&!powers.length&&!desc.length)detail.textContent="Brak dodatkowych informacji.";
+    if(powers.length)block("Powers",powers);
+    if(desc.length)block("Notes",desc);
+    if(!btn.dataset.photo&&!powers.length&&!desc.length)detail.textContent="No additional information.";
   }
   function resetDetail(){heading.textContent=DEFAULT_HEADING;detail.textContent=DEFAULT_DETAIL;}
   function showError(m){errorEl.textContent=m;errorEl.classList.add("show");}
@@ -842,8 +842,8 @@ html>body{padding:0}</style>
     btn.dataset.name=name;btn.dataset.powers=powers;btn.dataset.description=description;btn.dataset.photo=photo;
     const strong=document.createElement("strong");strong.textContent=name;btn.append(strong);
     const actions=document.createElement("div");actions.className="chapter-actions";
-    const edit=document.createElement("button");edit.type="button";edit.className="char-edit";edit.textContent="Edytuj";
-    const del=document.createElement("button");del.type="button";del.className="char-delete";del.textContent="Usuń";
+    const edit=document.createElement("button");edit.type="button";edit.className="char-edit";edit.textContent="Edit";
+    const del=document.createElement("button");del.type="button";del.className="char-delete";del.textContent="Delete";
     actions.append(edit,del);row.append(btn,actions);bindRow(row);return row;
   }
   list.querySelectorAll(".chapter-row").forEach(bindRow);
@@ -859,29 +859,29 @@ html>body{padding:0}</style>
   form.addEventListener("submit",event=>{
     event.preventDefault();
     const name=nameInput.value.trim();if(!name)return;
-    if(duplicate(name)){showError("Postać o tym imieniu już istnieje.");nameInput.focus();return;}
+    if(duplicate(name)){showError("A character with this name already exists.");nameInput.focus();return;}
     const powers=parseInput(powersInput.value).join("|");
     const description=parseInput(descInput.value).join("|");
     if(editing){
       const btn=editing.querySelector(".character");
       btn.dataset.name=name;btn.dataset.powers=powers;btn.dataset.description=description;btn.dataset.photo=workingPhoto;
       btn.querySelector("strong").textContent=name;
-      insertSorted(editing);showCharacter(btn);if(window.__arch)window.__arch.log("postacie",name,"edycja",btn);editing=null;
+      insertSorted(editing);showCharacter(btn);if(window.__arch)window.__arch.log("postacie",name,"edited",btn);editing=null;
     }else{
       const row=makeRow(name,powers,description,workingPhoto);
       const nbtn=row.querySelector(".character");
-      insertSorted(row);showCharacter(nbtn);if(window.__arch)window.__arch.log("postacie",name,"dodanie",nbtn);
+      insertSorted(row);showCharacter(nbtn);if(window.__arch)window.__arch.log("postacie",name,"added",nbtn);
     }
     workingPhoto="";renderCharPhoto();form.reset();form.classList.remove("show");clearError();
   });
   root.querySelector("#char-cancel-delete").addEventListener("click",()=>{deleteTarget=null;popup.classList.remove("show");});
   root.querySelector("#char-confirm-delete").addEventListener("click",()=>{
-    if(deleteTarget){const btn=deleteTarget.querySelector(".character");if(btn&&heading.textContent===btn.dataset.name)resetDetail();deleteTarget.remove();if(window.__arch&&btn)window.__arch.log("postacie",btn.dataset.name,"usunięcie",null);}
+    if(deleteTarget){const btn=deleteTarget.querySelector(".character");if(btn&&heading.textContent===btn.dataset.name)resetDetail();deleteTarget.remove();if(window.__arch&&btn)window.__arch.log("postacie",btn.dataset.name,"deleted",null);}
     deleteTarget=null;popup.classList.remove("show");
   });
   window.__importCharacters=items=>{list.innerHTML="";items.forEach(it=>list.append(makeRow(it.name,it.powers||"",it.description||"",it.photo||"")));};
 })();
-</script><style>#places .place{border:0;background:transparent;border-radius:0;width:100%;text-align:left;padding:14px 0;cursor:pointer;color:var(--ink);font:inherit}#places .place strong{display:block;font-size:1rem;font-weight:400}#places .place-delete{color:#f1bcc2}#place-detail strong{display:block;margin-top:10px;color:var(--gold);font-weight:400}#writer-notebook .thumbs{display:flex;flex-wrap:wrap;gap:10px;margin:2px 0}#writer-notebook .thumbs:empty{display:none}#writer-notebook .thumbs .thumb{position:relative;width:72px;height:72px;overflow:visible}#writer-notebook .thumbs .thumb img{width:100%;height:100%;object-fit:cover;border-radius:8px;display:block}#writer-notebook .thumbs .thumb-remove{position:absolute;top:-8px;right:-8px;width:22px;height:22px;min-width:0;padding:0;border:0;border-radius:999px;background:#7b3f4e;color:#fff;font:14px/22px system-ui,sans-serif;text-align:center;cursor:pointer;box-sizing:border-box}#place-detail .cover{position:relative;cursor:pointer;margin:0 0 12px}#place-detail .cover img{width:100%;max-height:220px;object-fit:cover;border-radius:10px;display:block}#place-detail .more-btn{position:absolute;right:8px;bottom:8px;background:rgba(0,0,0,.66);color:#fff;border:0;border-radius:999px;padding:6px 13px;font:.85rem system-ui,sans-serif;cursor:pointer}#place-gallery{z-index:6}#place-gallery .gallery-box{position:relative;width:92%;max-width:900px;max-height:86%;overflow:auto;background:#211b20;border:1px solid rgba(200,166,106,.55);border-radius:14px;padding:16px 16px 16px}#place-gallery .gallery-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:8px}#place-gallery .gallery-grid img{width:100%;height:140px;object-fit:cover;border-radius:8px;cursor:pointer;display:block}@media(max-width:680px){#place-gallery .gallery-grid{grid-template-columns:repeat(3,1fr)}#place-gallery .gallery-grid img{height:110px}}#place-gallery .gallery-close{position:absolute;top:8px;right:8px;width:30px;height:30px;padding:0;border:0;border-radius:999px;background:rgba(0,0,0,.6);color:#fff;font:18px/30px system-ui,sans-serif;text-align:center;cursor:pointer;z-index:1}#place-lightbox{display:none;position:absolute;inset:0;background:rgba(0,0,0,.85);align-items:center;justify-content:center;padding:20px;border-radius:18px;z-index:7;cursor:zoom-out}#place-lightbox.show{display:flex}#place-lightbox img{max-width:82%;max-height:100%;border-radius:10px}#place-lightbox .lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;padding:0;border:0;border-radius:999px;background:rgba(0,0,0,.55);color:#fff;font:26px/46px system-ui,sans-serif;text-align:center;cursor:pointer}#place-lightbox .lb-close{position:absolute;top:12px;right:14px;width:34px;height:34px;min-width:0;padding:0;border:0;border-radius:999px;background:rgba(0,0,0,.6);color:#fff;font:20px/34px system-ui,sans-serif;text-align:center;cursor:pointer}#place-lightbox #lb-prev{left:14px}#place-lightbox #lb-next{right:14px}</style><div id="place-delete-confirm" class="confirm-layer" role="dialog" aria-modal="true" aria-labelledby="place-confirm-title"><div class="confirm-box"><h2 id="place-confirm-title">Usunąć miejsce?</h2><p>Tej czynności nie można cofnąć.</p><div class="confirm-actions"><button id="place-cancel-delete" type="button">Anuluj</button><button id="place-confirm-delete" class="confirm-delete" type="button">Usuń</button></div></div></div><div id="place-lightbox" role="dialog" aria-modal="true"><button id="lb-close" type="button" class="lb-close" aria-label="Zamknij">×</button><button id="lb-prev" type="button" class="lb-nav" aria-label="Poprzednie zdjęcie">‹</button><img alt=""><button id="lb-next" type="button" class="lb-nav" aria-label="Następne zdjęcie">›</button></div><div id="place-gallery" class="confirm-layer" role="dialog" aria-modal="true" aria-label="Galeria zdjęć"><div class="gallery-box"><button id="place-gallery-close" type="button" class="gallery-close" aria-label="Zamknij">×</button><div id="place-gallery-grid" class="gallery-grid"></div></div></div><script>
+</script><style>#places .place{border:0;background:transparent;border-radius:0;width:100%;text-align:left;padding:14px 0;cursor:pointer;color:var(--ink);font:inherit}#places .place strong{display:block;font-size:1rem;font-weight:400}#places .place-delete{color:#f1bcc2}#place-detail strong{display:block;margin-top:10px;color:var(--gold);font-weight:400}#writer-notebook .thumbs{display:flex;flex-wrap:wrap;gap:10px;margin:2px 0}#writer-notebook .thumbs:empty{display:none}#writer-notebook .thumbs .thumb{position:relative;width:72px;height:72px;overflow:visible}#writer-notebook .thumbs .thumb img{width:100%;height:100%;object-fit:cover;border-radius:8px;display:block}#writer-notebook .thumbs .thumb-remove{position:absolute;top:-8px;right:-8px;width:22px;height:22px;min-width:0;padding:0;border:0;border-radius:999px;background:#7b3f4e;color:#fff;font:14px/22px system-ui,sans-serif;text-align:center;cursor:pointer;box-sizing:border-box}#place-detail .cover{position:relative;cursor:pointer;margin:0 0 12px}#place-detail .cover img{width:100%;max-height:220px;object-fit:cover;border-radius:10px;display:block}#place-detail .more-btn{position:absolute;right:8px;bottom:8px;background:rgba(0,0,0,.66);color:#fff;border:0;border-radius:999px;padding:6px 13px;font:.85rem system-ui,sans-serif;cursor:pointer}#place-gallery{z-index:6}#place-gallery .gallery-box{position:relative;width:92%;max-width:900px;max-height:86%;overflow:auto;background:#211b20;border:1px solid rgba(200,166,106,.55);border-radius:14px;padding:16px 16px 16px}#place-gallery .gallery-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:8px}#place-gallery .gallery-grid img{width:100%;height:140px;object-fit:cover;border-radius:8px;cursor:pointer;display:block}@media(max-width:680px){#place-gallery .gallery-grid{grid-template-columns:repeat(3,1fr)}#place-gallery .gallery-grid img{height:110px}}#place-gallery .gallery-close{position:absolute;top:8px;right:8px;width:30px;height:30px;padding:0;border:0;border-radius:999px;background:rgba(0,0,0,.6);color:#fff;font:18px/30px system-ui,sans-serif;text-align:center;cursor:pointer;z-index:1}#place-lightbox{display:none;position:absolute;inset:0;background:rgba(0,0,0,.85);align-items:center;justify-content:center;padding:20px;border-radius:18px;z-index:7;cursor:zoom-out}#place-lightbox.show{display:flex}#place-lightbox img{max-width:82%;max-height:100%;border-radius:10px}#place-lightbox .lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;padding:0;border:0;border-radius:999px;background:rgba(0,0,0,.55);color:#fff;font:26px/46px system-ui,sans-serif;text-align:center;cursor:pointer}#place-lightbox .lb-close{position:absolute;top:12px;right:14px;width:34px;height:34px;min-width:0;padding:0;border:0;border-radius:999px;background:rgba(0,0,0,.6);color:#fff;font:20px/34px system-ui,sans-serif;text-align:center;cursor:pointer}#place-lightbox #lb-prev{left:14px}#place-lightbox #lb-next{right:14px}</style><div id="place-delete-confirm" class="confirm-layer" role="dialog" aria-modal="true" aria-labelledby="place-confirm-title"><div class="confirm-box"><h2 id="place-confirm-title">Delete this place?</h2><p>This action cannot be undone.</p><div class="confirm-actions"><button id="place-cancel-delete" type="button">Cancel</button><button id="place-confirm-delete" class="confirm-delete" type="button">Delete</button></div></div></div><div id="place-lightbox" role="dialog" aria-modal="true"><button id="lb-close" type="button" class="lb-close" aria-label="Close">×</button><button id="lb-prev" type="button" class="lb-nav" aria-label="Previous photo">‹</button><img alt=""><button id="lb-next" type="button" class="lb-nav" aria-label="Next photo">›</button></div><div id="place-gallery" class="confirm-layer" role="dialog" aria-modal="true" aria-label="Photo gallery"><div class="gallery-box"><button id="place-gallery-close" type="button" class="gallery-close" aria-label="Close">×</button><div id="place-gallery-grid" class="gallery-grid"></div></div></div><script>
 (()=>{
   const root=document.getElementById("writer-notebook");
   const list=root.querySelector("#places");
@@ -899,8 +899,8 @@ html>body{padding:0}</style>
   const lbNext=root.querySelector("#lb-next");
   const gallery=root.querySelector("#place-gallery");
   const galleryGrid=root.querySelector("#place-gallery-grid");
-  const DEFAULT_HEADING="Wybierz miejsce";
-  const DEFAULT_DETAIL="Kliknij miejsce z listy, aby zobaczyć galerię i notatki.";
+  const DEFAULT_HEADING="Select a place";
+  const DEFAULT_DETAIL="Click a place on the list to see its gallery and notes.";
   let editing=null, workingPhotos=[], deleteTarget=null, lbPhotos=[], lbIndex=0;
   function listOf(v){return v?v.split("|").filter(Boolean):[];}
   function parseInput(v){return v.split("\n").map(l=>l.replace(/^-\s*/,"").trim()).filter(Boolean);}
@@ -919,7 +919,7 @@ html>body{padding:0}</style>
     workingPhotos.forEach((src,idx)=>{
       const wrap=document.createElement("div");wrap.className="thumb";
       const im=document.createElement("img");im.src=src;im.alt="";
-      const rm=document.createElement("button");rm.type="button";rm.className="thumb-remove";rm.textContent="×";rm.setAttribute("aria-label","Usuń zdjęcie");
+      const rm=document.createElement("button");rm.type="button";rm.className="thumb-remove";rm.textContent="×";rm.setAttribute("aria-label","Remove photo");
       rm.addEventListener("click",()=>{workingPhotos.splice(idx,1);renderStrip();});
       wrap.append(im,rm);strip.append(wrap);
     });
@@ -931,13 +931,13 @@ html>body{padding:0}</style>
     if(photos.length){
       const cover=document.createElement("div");cover.className="cover";
       const im=document.createElement("img");im.src=photos[0];im.alt=btn.dataset.name;cover.append(im);
-      if(photos.length>1){const more=document.createElement("button");more.type="button";more.className="more-btn";more.textContent="+"+(photos.length-1);more.setAttribute("aria-label","Zobacz galerię");cover.append(more);}
+      if(photos.length>1){const more=document.createElement("button");more.type="button";more.className="more-btn";more.textContent="+"+(photos.length-1);more.setAttribute("aria-label","View gallery");cover.append(more);}
       cover.addEventListener("click",()=>{if(photos.length>1)openGallery(photos,btn.dataset.name);else openLightbox(photos,0);});
       detail.append(cover);
     }
     const notes=listOf(btn.dataset.notes);
-    if(notes.length)block("Notatki",notes);
-    if(!photos.length&&!notes.length)detail.textContent="Brak dodatkowych informacji.";
+    if(notes.length)block("Notes",notes);
+    if(!photos.length&&!notes.length)detail.textContent="No additional information.";
   }
   function resetDetail(){heading.textContent=DEFAULT_HEADING;detail.textContent=DEFAULT_DETAIL;}
   function insertSorted(row){const name=row.querySelector(".place").dataset.name;const rows=[...list.querySelectorAll(".chapter-row")].filter(r=>r!==row);const next=rows.find(r=>r.querySelector(".place").dataset.name.localeCompare(name,"pl",{sensitivity:"base"})>0);list.insertBefore(row,next||null);}
@@ -963,8 +963,8 @@ html>body{padding:0}</style>
     btn.dataset.name=name;btn.dataset.notes=notes;btn._photos=photos;
     const strong=document.createElement("strong");strong.textContent=name;btn.append(strong);
     const actions=document.createElement("div");actions.className="chapter-actions";
-    const edit=document.createElement("button");edit.type="button";edit.className="place-edit";edit.textContent="Edytuj";
-    const del=document.createElement("button");del.type="button";del.className="place-delete";del.textContent="Usuń";
+    const edit=document.createElement("button");edit.type="button";edit.className="place-edit";edit.textContent="Edit";
+    const del=document.createElement("button");del.type="button";del.className="place-delete";del.textContent="Delete";
     actions.append(edit,del);row.append(btn,actions);bindRow(row);return row;
   }
   list.querySelectorAll(".chapter-row").forEach(bindRow);
@@ -983,11 +983,11 @@ html>body{padding:0}</style>
       const btn=editing.querySelector(".place");
       btn.dataset.name=name;btn.dataset.notes=notes;btn._photos=workingPhotos.slice();
       btn.querySelector("strong").textContent=name;
-      insertSorted(editing);showPlace(btn);if(window.__arch)window.__arch.log("swiat",name,"edycja",btn);editing=null;
+      insertSorted(editing);showPlace(btn);if(window.__arch)window.__arch.log("swiat",name,"edited",btn);editing=null;
     }else{
       const row=makeRow(name,notes,workingPhotos.slice());
       const nbtn=row.querySelector(".place");
-      insertSorted(row);showPlace(nbtn);if(window.__arch)window.__arch.log("swiat",name,"dodanie",nbtn);
+      insertSorted(row);showPlace(nbtn);if(window.__arch)window.__arch.log("swiat",name,"added",nbtn);
     }
     workingPhotos=[];renderStrip();form.reset();form.classList.remove("show");
   });
@@ -1007,10 +1007,10 @@ html>body{padding:0}</style>
   });
   gallery.addEventListener("click",e=>{if(e.target===gallery||e.target.id==="place-gallery-close")gallery.classList.remove("show");});
   root.querySelector("#place-cancel-delete").addEventListener("click",()=>{deleteTarget=null;popup.classList.remove("show");});
-  root.querySelector("#place-confirm-delete").addEventListener("click",()=>{if(deleteTarget){const btn=deleteTarget.querySelector(".place");if(btn&&heading.textContent===btn.dataset.name)resetDetail();deleteTarget.remove();if(window.__arch&&btn)window.__arch.log("swiat",btn.dataset.name,"usunięcie",null);}deleteTarget=null;popup.classList.remove("show");});
+  root.querySelector("#place-confirm-delete").addEventListener("click",()=>{if(deleteTarget){const btn=deleteTarget.querySelector(".place");if(btn&&heading.textContent===btn.dataset.name)resetDetail();deleteTarget.remove();if(window.__arch&&btn)window.__arch.log("swiat",btn.dataset.name,"deleted",null);}deleteTarget=null;popup.classList.remove("show");});
   window.__importPlaces=items=>{list.innerHTML="";items.forEach(it=>list.append(makeRow(it.name,it.notes||"",(it.photos||[]).slice())));};
 })();
-</script><style>#notes .note{border:0;background:transparent;border-radius:0;width:100%;text-align:left;padding:14px 0;cursor:grab;color:var(--ink);font:inherit}#notes .note strong{display:block;font-size:1rem;font-weight:400}#notes .note-delete{color:#f1bcc2}#note-search{margin:0 0 12px}#note-detail .note-text{white-space:pre-wrap;font:.92rem/1.6 system-ui,sans-serif;margin:0}</style><div id="note-delete-confirm" class="confirm-layer" role="dialog" aria-modal="true" aria-labelledby="note-confirm-title"><div class="confirm-box"><h2 id="note-confirm-title">Usunąć notatkę?</h2><p>Tej czynności nie można cofnąć.</p><div class="confirm-actions"><button id="note-cancel-delete" type="button">Anuluj</button><button id="note-confirm-delete" class="confirm-delete" type="button">Usuń</button></div></div></div><script>
+</script><style>#notes .note{border:0;background:transparent;border-radius:0;width:100%;text-align:left;padding:14px 0;cursor:grab;color:var(--ink);font:inherit}#notes .note strong{display:block;font-size:1rem;font-weight:400}#notes .note-delete{color:#f1bcc2}#note-search{margin:0 0 12px}#note-detail .note-text{white-space:pre-wrap;font:.92rem/1.6 system-ui,sans-serif;margin:0}</style><div id="note-delete-confirm" class="confirm-layer" role="dialog" aria-modal="true" aria-labelledby="note-confirm-title"><div class="confirm-box"><h2 id="note-confirm-title">Delete this note?</h2><p>This action cannot be undone.</p><div class="confirm-actions"><button id="note-cancel-delete" type="button">Cancel</button><button id="note-confirm-delete" class="confirm-delete" type="button">Delete</button></div></div></div><script>
 (()=>{
   const root=document.getElementById("writer-notebook");
   const list=root.querySelector("#notes");
@@ -1022,15 +1022,15 @@ html>body{padding:0}</style>
   const searchInput=root.querySelector("#note-search");
   const emptyMsg=root.querySelector("#note-empty");
   const popup=root.querySelector("#note-delete-confirm");
-  const DEFAULT_HEADING="Wybierz notatkę";
-  const DEFAULT_DETAIL="Kliknij notatkę z listy, aby zobaczyć jej treść.";
+  const DEFAULT_HEADING="Select a note";
+  const DEFAULT_DETAIL="Click a note on the list to see its content.";
   let editing=null, deleteTarget=null;
   function showNote(btn){
     heading.textContent=btn.dataset.title;
     detail.innerHTML="";
     const body=(btn.dataset.body||"").trim();
     if(body){const p=document.createElement("p");p.className="note-text";p.textContent=body;detail.append(p);}
-    else detail.textContent="Brak treści.";
+    else detail.textContent="No content.";
   }
   function resetDetail(){heading.textContent=DEFAULT_HEADING;detail.textContent=DEFAULT_DETAIL;}
   function norm(s){return (s||"").toLocaleLowerCase("pl");}
@@ -1065,8 +1065,8 @@ html>body{padding:0}</style>
     btn.dataset.title=title;btn.dataset.body=body;
     const strong=document.createElement("strong");strong.textContent=title;btn.append(strong);
     const actions=document.createElement("div");actions.className="chapter-actions";
-    const edit=document.createElement("button");edit.type="button";edit.className="note-edit";edit.textContent="Edytuj";
-    const del=document.createElement("button");del.type="button";del.className="note-delete";del.textContent="Usuń";
+    const edit=document.createElement("button");edit.type="button";edit.className="note-edit";edit.textContent="Edit";
+    const del=document.createElement("button");del.type="button";del.className="note-delete";del.textContent="Delete";
     actions.append(edit,del);row.append(btn,actions);bindRow(row);return row;
   }
   list.querySelectorAll(".chapter-row").forEach(bindRow);
@@ -1086,22 +1086,22 @@ html>body{padding:0}</style>
       const btn=editing.querySelector(".note");
       btn.dataset.title=title;btn.dataset.body=body;
       btn.querySelector("strong").textContent=title;
-      showNote(btn);if(window.__arch)window.__arch.log("notatki",title,"edycja",btn);editing=null;
+      showNote(btn);if(window.__arch)window.__arch.log("notatki",title,"edited",btn);editing=null;
     }else{
       const row=makeRow(title,body);
       const nbtn=row.querySelector(".note");
-      list.append(row);showNote(nbtn);if(window.__arch)window.__arch.log("notatki",title,"dodanie",nbtn);
+      list.append(row);showNote(nbtn);if(window.__arch)window.__arch.log("notatki",title,"added",nbtn);
     }
     form.reset();form.classList.remove("show");applyFilter();
   });
   root.querySelector("#note-cancel-delete").addEventListener("click",()=>{deleteTarget=null;popup.classList.remove("show");});
   root.querySelector("#note-confirm-delete").addEventListener("click",()=>{
-    if(deleteTarget){const btn=deleteTarget.querySelector(".note");if(btn&&heading.textContent===btn.dataset.title)resetDetail();deleteTarget.remove();if(window.__arch&&btn)window.__arch.log("notatki",btn.dataset.title,"usunięcie",null);}
+    if(deleteTarget){const btn=deleteTarget.querySelector(".note");if(btn&&heading.textContent===btn.dataset.title)resetDetail();deleteTarget.remove();if(window.__arch&&btn)window.__arch.log("notatki",btn.dataset.title,"deleted",null);}
     deleteTarget=null;popup.classList.remove("show");applyFilter();
   });
   window.__importNotes=items=>{list.innerHTML="";items.forEach(it=>list.append(makeRow(it.title,it.body||"")));applyFilter();};
 })();
-</script><style>#beasts .beast{border:0;background:transparent;border-radius:0;width:100%;text-align:left;padding:14px 0;cursor:pointer;color:var(--ink);font:inherit}#beasts .beast strong{display:block;font-size:1rem;font-weight:400}#beasts .beast-delete{color:#f1bcc2}#beast-detail img{max-width:100%;border-radius:10px;margin:0 0 12px;display:block}#beast-detail strong{display:block;margin-top:10px;color:var(--gold);font-weight:400}</style><div id="beast-delete-confirm" class="confirm-layer" role="dialog" aria-modal="true" aria-labelledby="beast-confirm-title"><div class="confirm-box"><h2 id="beast-confirm-title">Usunąć stworzenie?</h2><p>Tej czynności nie można cofnąć.</p><div class="confirm-actions"><button id="beast-cancel-delete" type="button">Anuluj</button><button id="beast-confirm-delete" class="confirm-delete" type="button">Usuń</button></div></div></div><script>
+</script><style>#beasts .beast{border:0;background:transparent;border-radius:0;width:100%;text-align:left;padding:14px 0;cursor:pointer;color:var(--ink);font:inherit}#beasts .beast strong{display:block;font-size:1rem;font-weight:400}#beasts .beast-delete{color:#f1bcc2}#beast-detail img{max-width:100%;border-radius:10px;margin:0 0 12px;display:block}#beast-detail strong{display:block;margin-top:10px;color:var(--gold);font-weight:400}</style><div id="beast-delete-confirm" class="confirm-layer" role="dialog" aria-modal="true" aria-labelledby="beast-confirm-title"><div class="confirm-box"><h2 id="beast-confirm-title">Delete this creature?</h2><p>This action cannot be undone.</p><div class="confirm-actions"><button id="beast-cancel-delete" type="button">Cancel</button><button id="beast-confirm-delete" class="confirm-delete" type="button">Delete</button></div></div></div><script>
 (()=>{
   const root=document.getElementById("writer-notebook");
   const list=root.querySelector("#beasts");
@@ -1113,8 +1113,8 @@ html>body{padding:0}</style>
   const photoStrip=root.querySelector("#beast-photo-edit");
   const descInput=root.querySelector("#beast-description");
   const popup=root.querySelector("#beast-delete-confirm");
-  const DEFAULT_HEADING="Wybierz stworzenie";
-  const DEFAULT_DETAIL="Kliknij stworzenie z listy, aby zobaczyć jego kartę.";
+  const DEFAULT_HEADING="Select a creature";
+  const DEFAULT_DETAIL="Click a creature on the list to see its card.";
   let editing=null, workingPhoto="", deleteTarget=null;
   function listOf(v){return v?v.split("|").filter(Boolean):[];}
   function parseInput(v){return v.split("\n").map(l=>l.replace(/^-\s*/,"").trim()).filter(Boolean);}
@@ -1123,7 +1123,7 @@ html>body{padding:0}</style>
     if(!workingPhoto)return;
     const wrap=document.createElement("div");wrap.className="thumb";
     const im=document.createElement("img");im.src=workingPhoto;im.alt="";
-    const rm=document.createElement("button");rm.type="button";rm.className="thumb-remove";rm.textContent="×";rm.setAttribute("aria-label","Usuń zdjęcie");
+    const rm=document.createElement("button");rm.type="button";rm.className="thumb-remove";rm.textContent="×";rm.setAttribute("aria-label","Remove photo");
     rm.addEventListener("click",()=>{workingPhoto="";renderPhoto();});
     wrap.append(im,rm);photoStrip.append(wrap);
   }
@@ -1132,8 +1132,8 @@ html>body{padding:0}</style>
     detail.innerHTML="";
     const desc=listOf(btn.dataset.description);
     if(btn.dataset.photo){const img=document.createElement("img");img.src=btn.dataset.photo;img.alt=btn.dataset.name;detail.append(img);}
-    if(desc.length){const h=document.createElement("strong");h.textContent="Opis";detail.append(h);const ul=document.createElement("ul");desc.forEach(it=>{const li=document.createElement("li");li.textContent=it;ul.append(li);});detail.append(ul);}
-    if(!btn.dataset.photo&&!desc.length)detail.textContent="Brak dodatkowych informacji.";
+    if(desc.length){const h=document.createElement("strong");h.textContent="Description";detail.append(h);const ul=document.createElement("ul");desc.forEach(it=>{const li=document.createElement("li");li.textContent=it;ul.append(li);});detail.append(ul);}
+    if(!btn.dataset.photo&&!desc.length)detail.textContent="No additional information.";
   }
   function resetDetail(){heading.textContent=DEFAULT_HEADING;detail.textContent=DEFAULT_DETAIL;}
   function insertSorted(row){
@@ -1165,8 +1165,8 @@ html>body{padding:0}</style>
     btn.dataset.name=name;btn.dataset.description=description;btn.dataset.photo=photo;
     const strong=document.createElement("strong");strong.textContent=name;btn.append(strong);
     const actions=document.createElement("div");actions.className="chapter-actions";
-    const edit=document.createElement("button");edit.type="button";edit.className="beast-edit";edit.textContent="Edytuj";
-    const del=document.createElement("button");del.type="button";del.className="beast-delete";del.textContent="Usuń";
+    const edit=document.createElement("button");edit.type="button";edit.className="beast-edit";edit.textContent="Edit";
+    const del=document.createElement("button");del.type="button";del.className="beast-delete";del.textContent="Delete";
     actions.append(edit,del);row.append(btn,actions);bindRow(row);return row;
   }
   list.querySelectorAll(".chapter-row").forEach(bindRow);
@@ -1186,17 +1186,17 @@ html>body{padding:0}</style>
       const btn=editing.querySelector(".beast");
       btn.dataset.name=name;btn.dataset.description=description;btn.dataset.photo=workingPhoto;
       btn.querySelector("strong").textContent=name;
-      insertSorted(editing);showBeast(btn);if(window.__arch)window.__arch.log("stworzenia",name,"edycja",btn);editing=null;
+      insertSorted(editing);showBeast(btn);if(window.__arch)window.__arch.log("stworzenia",name,"edited",btn);editing=null;
     }else{
       const row=makeRow(name,description,workingPhoto);
       const nbtn=row.querySelector(".beast");
-      insertSorted(row);showBeast(nbtn);if(window.__arch)window.__arch.log("stworzenia",name,"dodanie",nbtn);
+      insertSorted(row);showBeast(nbtn);if(window.__arch)window.__arch.log("stworzenia",name,"added",nbtn);
     }
     workingPhoto="";renderPhoto();form.reset();form.classList.remove("show");
   });
   root.querySelector("#beast-cancel-delete").addEventListener("click",()=>{deleteTarget=null;popup.classList.remove("show");});
   root.querySelector("#beast-confirm-delete").addEventListener("click",()=>{
-    if(deleteTarget){const btn=deleteTarget.querySelector(".beast");if(btn&&heading.textContent===btn.dataset.name)resetDetail();deleteTarget.remove();if(window.__arch&&btn)window.__arch.log("stworzenia",btn.dataset.name,"usunięcie",null);}
+    if(deleteTarget){const btn=deleteTarget.querySelector(".beast");if(btn&&heading.textContent===btn.dataset.name)resetDetail();deleteTarget.remove();if(window.__arch&&btn)window.__arch.log("stworzenia",btn.dataset.name,"deleted",null);}
     deleteTarget=null;popup.classList.remove("show");
   });
   window.__importBeasts=items=>{list.innerHTML="";items.forEach(it=>list.append(makeRow(it.name,it.description||"",it.photo||"")));};
@@ -1205,12 +1205,12 @@ html>body{padding:0}</style>
 (()=>{
   const root=document.getElementById("writer-notebook");
   const container=root.querySelector("#activity-list");
-  const labels={pulpit:"Pulpit",postacie:"Postacie",stworzenia:"Bestiariusz",plan:"Plan wydarzeń",swiat:"Świat",notatki:"Notatki"};
+  const labels={pulpit:"Dashboard",postacie:"Characters",stworzenia:"Bestiary",plan:"Outline",swiat:"World",notatki:"Notes"};
   const finders={plan:["#chapters .chapter","title"],postacie:["#characters .character","name"],stworzenia:["#beasts .beast","name"],swiat:["#places .place","name"],notatki:["#notes .note","title"]};
   let entries=[];
   function render(){
     container.innerHTML="";
-    if(!entries.length){container.textContent="Brak zmian.";return;}
+    if(!entries.length){container.textContent="No changes yet.";return;}
     entries.forEach(e=>{
       const b=document.createElement("button");b.type="button";b.className="activity-item";
       const t=document.createElement("strong");t.textContent=(labels[e.view]||e.view)+" / "+e.item;
@@ -1219,7 +1219,7 @@ html>body{padding:0}</style>
       b.addEventListener("click",()=>{
         const tab=[...root.querySelectorAll("nav button")].find(x=>x.dataset.view===e.view);
         if(tab)tab.click();
-        if(e.action==="usunięcie")return;
+        if(e.action==="deleted")return;
         const f=finders[e.view];
         if(!f)return;
         const btn=[...root.querySelectorAll(f[0])].find(x=>x.dataset[f[1]]===e.item);
@@ -1241,9 +1241,9 @@ html>body{padding:0}</style>
 <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-database-compat.js"></script>
 <script>
 (()=>{
-  const KEY="archiwum-wampiry-v1";
-  // Dane logowania projektu Firebase — wartości "WKLEJ_..." trzeba podmienić na
-  // konfigurację z konsoli Firebase (Ustawienia projektu -> Twoje aplikacje).
+  const KEY="lorebook-v1";
+  const APP_NAME="Lorebook";
+  // Firebase project configuration (Firebase console -> Project settings -> Your apps).
   const FIREBASE_CONFIG={
     apiKey:"AIzaSyCBziYJMY1bxBFSf7-X6-S7bOE1K07_Nmg",
     authDomain:"book-archive-fbb67.firebaseapp.com",
@@ -1253,8 +1253,9 @@ html>body{padding:0}</style>
     messagingSenderId:"554976522117",
     appId:"1:554976522117:web:e30b926201063b3cc09eec"
   };
-  const cloudEnabled=typeof firebase!=="undefined"&&FIREBASE_CONFIG.apiKey&&!FIREBASE_CONFIG.apiKey.startsWith("WKLEJ");
+  const cloudEnabled=typeof firebase!=="undefined"&&FIREBASE_CONFIG.apiKey&&!FIREBASE_CONFIG.apiKey.startsWith("PASTE");
   const root=document.getElementById("writer-notebook");
+  const headerTitle=root?root.querySelector("header h1"):null;
   window.__shrinkImage=function(dataUrl){
     return new Promise(resolve=>{
       try{
@@ -1298,84 +1299,106 @@ html>body{padding:0}</style>
     if(Array.isArray(d.beasts)&&window.__importBeasts)window.__importBeasts(d.beasts);
     if(Array.isArray(d.activity)&&window.__arch&&window.__arch.import)window.__arch.import(d.activity);
   }
+  const EMPTY_BOOK={chapters:[],characters:[],places:[],notes:[],beasts:[],activity:[]};
+  function lsGet(k){try{return localStorage.getItem(k);}catch(e){return null;}}
+  function lsSet(k,v){try{localStorage.setItem(k,v);}catch(e){console.warn("Could not save locally (browser storage may be full).",e);}}
+  function lsRemove(k){try{localStorage.removeItem(k);}catch(e){}}
 
-  /* ---------- Pasek stanu synchronizacji + ekran logowania ---------- */
+  /* ---------- Sync badge, sign-in screen and book picker ---------- */
   const ui=document.createElement("div");
   ui.innerHTML=
     '<style>'+
-    '#sync-badge{position:fixed;bottom:10px;right:10px;z-index:9998;display:flex;align-items:center;gap:8px;'+
+    '#sync-badge{position:fixed;bottom:10px;right:10px;z-index:9998;display:flex;align-items:center;gap:10px;'+
     'font:12px/1.4 var(--font-sans,sans-serif);color:var(--muted-foreground,#888);'+
     'background:var(--popover,#2d2d2d);border:1px solid var(--border,#444);border-radius:999px;padding:5px 12px;box-shadow:0 2px 8px rgb(0 0 0/25%)}'+
-    '#sync-badge b{font-weight:500;color:var(--foreground,#fff)}'+
     '#sync-badge a{color:var(--primary,#83c3ff);cursor:pointer;text-decoration:none}'+
-    '#login-overlay{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;'+
-    'background:var(--background,#181818);font-family:var(--font-sans,sans-serif)}'+
-    '#login-overlay.visible{display:flex}'+
-    '#login-overlay form{width:min(92vw,340px);display:flex;flex-direction:column;gap:12px;padding:28px;'+
+    '.lb-overlay{position:fixed;inset:0;display:none;align-items:center;justify-content:center;'+
+    'background:var(--background,#181818);font-family:var(--font-sans,sans-serif);overflow:auto}'+
+    '.lb-overlay.visible{display:flex}'+
+    '#login-overlay{z-index:10000}#book-overlay{z-index:9999}'+
+    '.lb-card{width:min(92vw,420px);display:flex;flex-direction:column;gap:12px;padding:28px;margin:16px 0;'+
     'background:var(--secondary,#363636);border:1px solid var(--border,#444);border-radius:16px}'+
-    '#login-overlay h1{margin:0 0 4px;font-size:20px;color:var(--foreground,#fff);font-weight:600}'+
-    '#login-overlay p{margin:0 0 8px;font-size:13px;color:var(--muted-foreground,#999)}'+
-    '#login-overlay input{padding:10px 12px;border-radius:9px;border:1px solid var(--border,#555);'+
-    'background:var(--background,#181818);color:var(--foreground,#fff);font-size:14px}'+
-    '#login-overlay button{padding:10px;border:0;border-radius:9px;background:var(--primary,#83c3ff);'+
+    '.lb-card h1{margin:0 0 4px;font-size:20px;color:var(--foreground,#fff);font-weight:600}'+
+    '.lb-card p{margin:0 0 8px;font-size:13px;color:var(--muted-foreground,#999)}'+
+    '.lb-card input{padding:10px 12px;border-radius:9px;border:1px solid var(--border,#555);'+
+    'background:var(--background,#181818);color:var(--foreground,#fff);font-size:14px;min-width:0}'+
+    '.lb-card button{padding:10px;border:0;border-radius:9px;background:var(--primary,#83c3ff);'+
     'color:var(--primary-foreground,#111);font-size:14px;font-weight:600;cursor:pointer}'+
+    '#login-form{display:flex;flex-direction:column;gap:12px}'+
     '#login-error{color:var(--destructive,#ff8549);font-size:13px;min-height:1em;margin:0}'+
     '#login-reset{font-size:12px;color:var(--primary,#83c3ff);cursor:pointer;text-align:center}'+
+    '#book-list{display:flex;flex-direction:column}'+
+    '.book-row{display:flex;align-items:center;gap:8px;padding:10px 0;border-bottom:1px solid var(--border,#444)}'+
+    '.book-row .book-open{flex:1;text-align:left;background:transparent;color:var(--foreground,#fff);'+
+    'font-size:15px;font-weight:500;padding:4px 0;border:0;cursor:pointer}'+
+    '.book-row .book-act{background:transparent;border:0;padding:4px 6px;font-size:12px;'+
+    'color:var(--primary,#83c3ff);cursor:pointer;font-weight:400}'+
+    '.book-row .book-act.danger{color:var(--destructive,#ff8549)}'+
+    '.book-row input{flex:1}'+
+    '.book-empty{text-align:center;padding:8px 0}'+
+    '#book-add{display:flex;gap:8px;margin-top:10px}'+
+    '#book-add input{flex:1}'+
+    '#book-add button{white-space:nowrap}'+
+    '#writer-notebook header{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}'+
+    '#writer-notebook #book-back{background:transparent;border:1px solid rgba(200,166,106,.45);border-radius:999px;'+
+    'padding:5px 14px;color:var(--gold,#c8a66a);font:.85rem system-ui,sans-serif;cursor:pointer;min-width:0}'+
     '</style>'+
-    '<div id="sync-badge"><span id="sync-text">…</span><a id="sync-logout" style="display:none">wyloguj</a></div>'+
-    '<div id="login-overlay"><form id="login-form" autocomplete="on">'+
-    '<h1>Archiwum Książki</h1><p>Zaloguj się, aby otworzyć swoje notatki.</p>'+
-    '<input id="login-email" type="email" placeholder="E-mail" autocomplete="email" required>'+
-    '<input id="login-pass" type="password" placeholder="Hasło" autocomplete="current-password" required>'+
+    '<div id="sync-badge"><span id="sync-text">…</span><a id="switch-book" style="display:none">books</a><a id="sync-logout" style="display:none">sign out</a></div>'+
+    '<div id="login-overlay" class="lb-overlay"><form id="login-form" class="lb-card" autocomplete="on">'+
+    '<h1>Lorebook</h1><p>Sign in to open your notes.</p>'+
+    '<input id="login-email" type="email" placeholder="Email" autocomplete="email" required>'+
+    '<input id="login-pass" type="password" placeholder="Password" autocomplete="current-password" required>'+
     '<p id="login-error"></p>'+
-    '<button type="submit">Zaloguj</button>'+
-    '<span id="login-reset">Nie pamiętam hasła</span>'+
-    '</form></div>';
+    '<button type="submit">Sign in</button>'+
+    '<span id="login-reset">Forgot password</span>'+
+    '</form></div>'+
+    '<div id="book-overlay" class="lb-overlay"><div class="lb-card">'+
+    '<h1>Lorebook</h1><p>Choose a book to work on.</p>'+
+    '<div id="book-list"></div>'+
+    '<form id="book-add"><input id="book-new-title" placeholder="New book title" aria-label="New book title" required><button type="submit">+ Add book</button></form>'+
+    '</div></div>';
   document.body.append(ui);
-  const badgeText=ui.querySelector("#sync-text"),logoutLink=ui.querySelector("#sync-logout"),
-        overlay=ui.querySelector("#login-overlay"),loginForm=ui.querySelector("#login-form"),
-        loginError=ui.querySelector("#login-error");
+  const badgeText=ui.querySelector("#sync-text"),logoutLink=ui.querySelector("#sync-logout"),switchLink=ui.querySelector("#switch-book"),
+        loginOverlay=ui.querySelector("#login-overlay"),loginForm=ui.querySelector("#login-form"),loginError=ui.querySelector("#login-error"),
+        bookOverlay=ui.querySelector("#book-overlay"),bookListEl=ui.querySelector("#book-list"),
+        bookAddForm=ui.querySelector("#book-add"),bookNewTitle=ui.querySelector("#book-new-title");
   function badge(state,extra){
     badgeText.textContent=
-      state==="local"?"tryb lokalny (bez chmury)":
-      state==="connecting"?"łączenie…":
-      state==="saving"?"zapisywanie…":
-      state==="ok"?"✓ zsynchronizowano":
-      state==="err"?"⚠ błąd zapisu w chmurze — dane zapisane lokalnie":
+      state==="local"?"local mode (no cloud)":
+      state==="connecting"?"connecting…":
+      state==="saving"?"saving…":
+      state==="ok"?"✓ synced":
+      state==="err"?"⚠ cloud save failed — saved locally":
       extra||"";
   }
 
-  /* ---------- Zapis: lokalnie zawsze, do chmury gdy zalogowana ---------- */
-  let dbref=null,lastJson=null,applying=false,pushTimer=null,pendingJson=null;
+  /* ---------- Saving: always locally, to the cloud while signed in ---------- */
+  let db=null,uid=null,listRef=null,bookRef=null,books={},currentBookId=null;
+  let lastJson=null,applying=false,pushTimer=null,pendingJson=null;
   function saveLocal(json){
-    try{localStorage.setItem(KEY,json);}
-    catch(e){console.warn("Nie udało się zapisać danych (prawdopodobnie brak miejsca w pamięci przeglądarki).",e);}
+    if(cloudEnabled){if(currentBookId)lsSet(KEY+":book:"+currentBookId,json);}
+    else lsSet(KEY,json);
   }
   function pushNow(json){
-    if(!dbref)return;
+    if(!bookRef)return;
     pendingJson=null;
-    dbref.set({json:json,updatedAt:firebase.database.ServerValue.TIMESTAMP})
+    bookRef.set({json:json,updatedAt:firebase.database.ServerValue.TIMESTAMP})
       .then(()=>badge("ok"))
-      .catch(e=>{console.warn("Zapis w chmurze nie powiódł się:",e);badge("err");});
+      .catch(e=>{console.warn("Cloud save failed:",e);badge("err");});
     lastJson=json;
   }
   function save(){
     if(applying)return;
+    if(cloudEnabled&&!currentBookId)return;
     let json=null;
     try{json=JSON.stringify(exportData());}catch(e){return;}
     saveLocal(json);
-    if(dbref&&json!==lastJson){
+    if(bookRef&&json!==lastJson){
       badge("saving");
       pendingJson=json;
       clearTimeout(pushTimer);
       pushTimer=setTimeout(()=>{if(pendingJson)pushNow(pendingJson);},800);
     }
-  }
-  function restoreLocal(){
-    let raw=null;
-    try{raw=localStorage.getItem(KEY);}catch(e){return;}
-    if(!raw)return;
-    try{applyData(JSON.parse(raw));lastJson=raw;}catch(e){}
   }
   function applyRemote(json){
     let d=null;
@@ -1389,17 +1412,181 @@ html>body{padding:0}</style>
     if(document.visibilityState==="hidden"&&pendingJson)pushNow(pendingJson);
   });
 
-  /* ---------- Logowanie i nasłuch zmian z chmury ---------- */
+  /* ---------- Books: open, create, rename, delete ---------- */
+  function setTitles(title){
+    if(headerTitle)headerTitle.textContent=title;
+    document.title=title===APP_NAME?APP_NAME:title+" — "+APP_NAME;
+  }
+  function closeBook(){
+    if(bookRef){bookRef.off();bookRef=null;}
+    currentBookId=null;pendingJson=null;lastJson=null;
+    applying=true;try{applyData(EMPTY_BOOK);}finally{applying=false;}
+    setTitles(APP_NAME);
+    switchLink.style.display="none";
+    if(backBtn)backBtn.style.display="none";
+  }
+  function openBook(id){
+    if(bookRef){bookRef.off();bookRef=null;}
+    currentBookId=id;pendingJson=null;
+    setTitles((books[id]&&books[id].title)||"Untitled");
+    bookOverlay.classList.remove("visible");
+    switchLink.style.display="";
+    if(backBtn)backBtn.style.display="";
+    const cached=lsGet(KEY+":book:"+id);
+    applying=true;
+    try{
+      let d=null;
+      if(cached){try{d=JSON.parse(cached);}catch(e){d=null;}}
+      applyData(d||EMPTY_BOOK);
+    }finally{applying=false;}
+    lastJson=cached||null;
+    badge("connecting");
+    bookRef=db.ref("users/"+uid+"/bookData/"+id);
+    bookRef.on("value",snap=>{
+      const v=snap.val();
+      if(!v||!v.json){
+        let json=null;
+        try{json=JSON.stringify(exportData());}catch(e){return;}
+        pushNow(json);
+        return;
+      }
+      if(v.json===lastJson){badge("ok");return;}
+      applyRemote(v.json);
+      badge("ok");
+    });
+  }
+  function createBook(title){
+    const id=listRef.push().key;
+    books[id]={title:title,createdAt:Date.now()};
+    listRef.child(id).set({title:title,createdAt:firebase.database.ServerValue.TIMESTAMP})
+      .catch(e=>console.warn("Could not create book:",e));
+    openBook(id);
+  }
+  function renameBook(id,title){
+    if(books[id])books[id].title=title;
+    listRef.child(id).update({title:title}).catch(e=>console.warn("Could not rename book:",e));
+    if(currentBookId===id)setTitles(title);
+  }
+  function deleteBook(id){
+    const upd={};
+    upd["bookList/"+id]=null;
+    upd["bookData/"+id]=null;
+    db.ref("users/"+uid).update(upd).catch(e=>console.warn("Could not delete book:",e));
+    lsRemove(KEY+":book:"+id);
+    delete books[id];
+    if(currentBookId===id){closeBook();bookOverlay.classList.add("visible");}
+    renderBookList();
+  }
+  function startRename(row,id){
+    row.innerHTML="";
+    const inp=document.createElement("input");
+    inp.value=(books[id]&&books[id].title)||"";
+    inp.setAttribute("aria-label","Book title");
+    const ok=document.createElement("button");ok.type="button";ok.className="book-act";ok.textContent="Save";
+    const no=document.createElement("button");no.type="button";no.className="book-act";no.textContent="Cancel";
+    ok.addEventListener("click",()=>{const t=inp.value.trim();if(t)renameBook(id,t);renderBookList();});
+    no.addEventListener("click",()=>renderBookList());
+    inp.addEventListener("keydown",e=>{
+      if(e.key==="Enter"){e.preventDefault();ok.click();}
+      else if(e.key==="Escape")no.click();
+    });
+    row.append(inp,ok,no);
+    inp.focus();inp.select();
+  }
+  function renderBookList(){
+    bookListEl.innerHTML="";
+    const ids=Object.keys(books).sort((a,b)=>((books[a]&&books[a].createdAt)||0)-((books[b]&&books[b].createdAt)||0));
+    if(!ids.length){
+      const p=document.createElement("p");p.className="book-empty";
+      p.textContent="No books yet — add your first one below.";
+      bookListEl.append(p);
+      return;
+    }
+    ids.forEach(id=>{
+      const row=document.createElement("div");row.className="book-row";
+      const open=document.createElement("button");open.type="button";open.className="book-open";
+      open.textContent=(books[id]&&books[id].title)||"Untitled";
+      open.addEventListener("click",()=>openBook(id));
+      const ren=document.createElement("button");ren.type="button";ren.className="book-act";ren.textContent="Rename";
+      ren.addEventListener("click",()=>startRename(row,id));
+      const del=document.createElement("button");del.type="button";del.className="book-act danger";del.textContent="Delete";
+      del.addEventListener("click",()=>{
+        const t=(books[id]&&books[id].title)||"Untitled";
+        if(confirm('Delete "'+t+'" and all of its content? This cannot be undone.'))deleteBook(id);
+      });
+      row.append(open,ren,del);
+      bookListEl.append(row);
+    });
+  }
+  bookAddForm.addEventListener("submit",e=>{
+    e.preventDefault();
+    const t=bookNewTitle.value.trim();
+    if(!t)return;
+    bookNewTitle.value="";
+    createBook(t);
+  });
+  bookOverlay.addEventListener("click",e=>{
+    if(e.target===bookOverlay&&currentBookId)bookOverlay.classList.remove("visible");
+  });
+  switchLink.addEventListener("click",()=>{renderBookList();bookOverlay.classList.add("visible");});
+  let backBtn=null;
+  if(root){
+    const header=root.querySelector("header");
+    if(header){
+      backBtn=document.createElement("button");
+      backBtn.type="button";backBtn.id="book-back";
+      backBtn.textContent="‹ My books";
+      backBtn.style.display="none";
+      backBtn.addEventListener("click",()=>{renderBookList();bookOverlay.classList.add("visible");});
+      header.append(backBtn);
+    }
+  }
+
+  /* ---------- Sign-in and cloud listeners ---------- */
+  function attachList(){
+    listRef=db.ref("users/"+uid+"/bookList");
+    // One-time migration: move the old single-book data into the first book on the list.
+    db.ref("users/"+uid+"/archiwum").once("value").then(legacy=>{
+      const lv=legacy.val();
+      if(!lv||!lv.json)return null;
+      return listRef.once("value").then(ls=>{
+        if(ls.exists())return null;
+        const id=listRef.push().key;
+        const upd={};
+        upd["bookList/"+id]={title:"My Book",createdAt:firebase.database.ServerValue.TIMESTAMP};
+        upd["bookData/"+id]=lv;
+        return db.ref("users/"+uid).update(upd).then(()=>db.ref("users/"+uid+"/archiwum").remove());
+      });
+    }).catch(e=>console.warn("Migration failed:",e)).then(()=>{
+      if(!listRef)return;
+      const cached=lsGet(KEY+":books");
+      if(cached){try{books=JSON.parse(cached)||{};}catch(e){books={};}renderBookList();}
+      listRef.on("value",snap=>{
+        books=snap.val()||{};
+        lsSet(KEY+":books",JSON.stringify(books));
+        renderBookList();
+        if(currentBookId){
+          if(!books[currentBookId]){closeBook();bookOverlay.classList.add("visible");}
+          else setTitles(books[currentBookId].title||"Untitled");
+        }
+        badge(currentBookId?"ok":"","");
+        if(!currentBookId)badgeText.textContent="choose a book";
+      });
+      renderBookList();
+      if(!currentBookId)bookOverlay.classList.add("visible");
+    });
+  }
   if(cloudEnabled){
     badge("connecting");
     firebase.initializeApp(FIREBASE_CONFIG);
+    db=firebase.database();
     const ERRORS={
-      "auth/invalid-credential":"Nieprawidłowy e-mail lub hasło.",
-      "auth/wrong-password":"Nieprawidłowy e-mail lub hasło.",
-      "auth/user-not-found":"Nieprawidłowy e-mail lub hasło.",
-      "auth/invalid-email":"Nieprawidłowy adres e-mail.",
-      "auth/too-many-requests":"Za dużo prób logowania — odczekaj chwilę.",
-      "auth/network-request-failed":"Brak połączenia z internetem."
+      "auth/invalid-credential":"Incorrect email or password.",
+      "auth/wrong-password":"Incorrect email or password.",
+      "auth/user-not-found":"Incorrect email or password.",
+      "auth/invalid-email":"Invalid email address.",
+      "auth/too-many-requests":"Too many attempts — try again in a moment.",
+      "auth/network-request-failed":"No internet connection."
     };
     loginForm.addEventListener("submit",ev=>{
       ev.preventDefault();
@@ -1407,48 +1594,42 @@ html>body{padding:0}</style>
       firebase.auth().signInWithEmailAndPassword(
         ui.querySelector("#login-email").value.trim(),
         ui.querySelector("#login-pass").value
-      ).catch(e=>{loginError.textContent=ERRORS[e.code]||"Nie udało się zalogować ("+e.code+").";});
+      ).catch(e=>{loginError.textContent=ERRORS[e.code]||"Sign-in failed ("+e.code+").";});
     });
     ui.querySelector("#login-reset").addEventListener("click",()=>{
       const email=ui.querySelector("#login-email").value.trim();
-      if(!email){loginError.textContent="Wpisz najpierw swój e-mail powyżej.";return;}
+      if(!email){loginError.textContent="Enter your email above first.";return;}
       firebase.auth().sendPasswordResetEmail(email)
-        .then(()=>{loginError.textContent="Wysłano link do zmiany hasła na "+email+".";})
-        .catch(e=>{loginError.textContent=ERRORS[e.code]||"Nie udało się wysłać ("+e.code+").";});
+        .then(()=>{loginError.textContent="Password reset link sent to "+email+".";})
+        .catch(e=>{loginError.textContent=ERRORS[e.code]||"Could not send ("+e.code+").";});
     });
     logoutLink.addEventListener("click",()=>firebase.auth().signOut());
     firebase.auth().onAuthStateChanged(user=>{
       if(user){
-        overlay.classList.remove("visible");
+        uid=user.uid;
+        loginOverlay.classList.remove("visible");
         logoutLink.style.display="";
         badge("connecting");
-        dbref=firebase.database().ref("users/"+user.uid+"/archiwum");
-        dbref.on("value",snap=>{
-          const v=snap.val();
-          if(!v||!v.json){
-            let json=null;
-            try{json=JSON.stringify(exportData());}catch(e){return;}
-            pushNow(json);
-            return;
-          }
-          if(v.json===lastJson){badge("ok");return;}
-          applyRemote(v.json);
-          badge("ok");
-        });
+        attachList();
       }else{
-        if(dbref){dbref.off();dbref=null;}
+        uid=null;
+        if(listRef){listRef.off();listRef=null;}
+        closeBook();
+        books={};
+        bookOverlay.classList.remove("visible");
         logoutLink.style.display="none";
-        overlay.classList.add("visible");
-        badge("","niezalogowana");
+        loginOverlay.classList.add("visible");
+        badge("","signed out");
       }
     });
   }else{
     badge("local");
+    const raw=lsGet(KEY);
+    if(raw){try{applyData(JSON.parse(raw));lastJson=raw;}catch(e){}}
   }
 
   if(window.__arch){const orig=window.__arch.log;window.__arch.log=function(v,i,a,b){orig.call(window.__arch,v,i,a,b);save();};}
   root.addEventListener("dragend",()=>save());
-  restoreLocal();
 })();
 </script></main>
 
