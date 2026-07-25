@@ -1344,7 +1344,7 @@ html>body{padding:0}</style>
     'padding:5px 14px;color:var(--gold,#c8a66a);font:.85rem system-ui,sans-serif;cursor:pointer;min-width:0}'+
     '</style>'+
     '<div id="sync-badge"><span id="sync-text">…</span><a id="switch-book" style="display:none">books</a><a id="sync-logout" style="display:none">sign out</a></div>'+
-    '<div id="login-overlay" class="lb-overlay"><form id="login-form" class="lb-card" autocomplete="on">'+
+    '<div id="login-overlay" class="lb-overlay"><div id="login-loading" class="lb-card" style="display:none"><h1>Lorebook</h1><p>Loading…</p></div><form id="login-form" class="lb-card" autocomplete="on">'+
     '<h1>Lorebook</h1><p>Sign in to open your notes.</p>'+
     '<input id="login-email" type="email" placeholder="Email" autocomplete="email" required>'+
     '<input id="login-pass" type="password" placeholder="Password" autocomplete="current-password" required>'+
@@ -1360,8 +1360,11 @@ html>body{padding:0}</style>
   document.body.append(ui);
   const badgeText=ui.querySelector("#sync-text"),logoutLink=ui.querySelector("#sync-logout"),switchLink=ui.querySelector("#switch-book"),
         loginOverlay=ui.querySelector("#login-overlay"),loginForm=ui.querySelector("#login-form"),loginError=ui.querySelector("#login-error"),
+        loginLoading=ui.querySelector("#login-loading"),
         bookOverlay=ui.querySelector("#book-overlay"),bookListEl=ui.querySelector("#book-list"),
         bookAddForm=ui.querySelector("#book-add"),bookNewTitle=ui.querySelector("#book-new-title");
+  function showLoginLoading(){loginLoading.style.display="";loginForm.style.display="none";loginOverlay.classList.add("visible");}
+  function showLoginForm(){loginLoading.style.display="none";loginForm.style.display="";loginOverlay.classList.add("visible");}
   function badge(state,extra){
     badgeText.textContent=
       state==="local"?"local mode (no cloud)":
@@ -1546,7 +1549,7 @@ html>body{padding:0}</style>
   function attachList(){
     listRef=db.ref("users/"+uid+"/bookList");
     // One-time migration: move the old single-book data into the first book on the list.
-    db.ref("users/"+uid+"/archiwum").once("value").then(legacy=>{
+    const migration=db.ref("users/"+uid+"/archiwum").once("value").then(legacy=>{
       const lv=legacy.val();
       if(!lv||!lv.json)return null;
       return listRef.once("value").then(ls=>{
@@ -1557,7 +1560,9 @@ html>body{padding:0}</style>
         upd["bookData/"+id]=lv;
         return db.ref("users/"+uid).update(upd).then(()=>db.ref("users/"+uid+"/archiwum").remove());
       });
-    }).catch(e=>console.warn("Migration failed:",e)).then(()=>{
+    }).catch(e=>console.warn("Migration failed:",e));
+    // Do not keep the user staring at the loading screen if the network is slow/offline.
+    Promise.race([migration,new Promise(r=>setTimeout(r,4000))]).then(()=>{
       if(!listRef)return;
       const cached=lsGet(KEY+":books");
       if(cached){try{books=JSON.parse(cached)||{};}catch(e){books={};}renderBookList();}
@@ -1574,10 +1579,12 @@ html>body{padding:0}</style>
       });
       renderBookList();
       if(!currentBookId)bookOverlay.classList.add("visible");
+      loginOverlay.classList.remove("visible");
     });
   }
   if(cloudEnabled){
     badge("connecting");
+    showLoginLoading();
     firebase.initializeApp(FIREBASE_CONFIG);
     db=firebase.database();
     const ERRORS={
@@ -1607,7 +1614,7 @@ html>body{padding:0}</style>
     firebase.auth().onAuthStateChanged(user=>{
       if(user){
         uid=user.uid;
-        loginOverlay.classList.remove("visible");
+        showLoginLoading();
         logoutLink.style.display="";
         badge("connecting");
         attachList();
@@ -1618,7 +1625,7 @@ html>body{padding:0}</style>
         books={};
         bookOverlay.classList.remove("visible");
         logoutLink.style.display="none";
-        loginOverlay.classList.add("visible");
+        showLoginForm();
         badge("","signed out");
       }
     });
