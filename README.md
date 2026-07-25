@@ -1,46 +1,46 @@
 # 📚 Lorebook
 
-Aplikacja webowa dla pisarzy do porządkowania świata powieści — postacie, bestiariusz, plan wydarzeń, miejsca i notatki, z obsługą wielu książek i synchronizacją między urządzeniami na żywo.
+A web app for writers to organize their story worlds — characters, bestiary, outline, places and notes, with multi-book support and live sync across devices.
 
-> Projekt powstał jako narzędzie do pracy nad moją własną powieścią o wampirach. 🦇
+> Built as a tool for working on my own vampire novel. 🦇
 
-## ✨ Funkcje
+## ✨ Features
 
-- **Wiele książek** — po zalogowaniu wybierasz książkę z listy; każdą można dodać, zmienić jej tytuł lub usunąć, a każda ma całkowicie osobne dane
-- **Kartoteka postaci** — imię, moce, opis i zdjęcie każdej postaci
-- **Bestiariusz** — katalog stworzeń zamieszkujących świat powieści
-- **Plan wydarzeń (Outline)** — rozdziały z listą wydarzeń, układane przeciąganiem (drag & drop)
-- **Miejsca** — lokacje z notatkami i galerią zdjęć
-- **Notatki** — szybkie zapiski z wyszukiwarką
-- **Ostatnie zmiany** — dziennik aktywności pokazujący, co ostatnio edytowano
+- **Multiple books** — after signing in you pick a book from your list; books can be added, renamed or deleted, and each keeps fully separate data
+- **Character cards** — name, powers, description and a photo for every character
+- **Bestiary** — a catalog of the creatures that inhabit your story world
+- **Outline** — chapters with event lists, reordered by drag & drop
+- **Places** — locations with notes and a photo gallery
+- **Notes** — quick notes with search
+- **Recent changes** — an activity log showing what was edited last
 
-## 🔄 Synchronizacja i bezpieczeństwo
+## 🔄 Sync and security
 
-- **Logowanie** (Firebase Authentication, e-mail + hasło) — dane widzi tylko zalogowany właściciel
-- **Synchronizacja na żywo** (Firebase Realtime Database) — zmiana zapisana na komputerze pojawia się na telefonie w kilka sekund, i odwrotnie
-- **Tryb offline** — dane zapisują się też lokalnie w przeglądarce, więc aplikacja działa bez internetu
-- **Reguły dostępu** w bazie danych ograniczają odczyt i zapis wyłącznie do konta właściciela
-- Zdjęcia są automatycznie zmniejszane przed zapisem, żeby oszczędzać miejsce
+- **Sign-in** (Firebase Authentication, email + password) — only the signed-in owner can see their data
+- **Live sync** (Firebase Realtime Database) — a change saved on your computer shows up on your phone within seconds, and vice versa
+- **Offline mode** — data is also saved locally in the browser, so the app keeps working without internet
+- **Database access rules** restrict reads and writes strictly to the owner's account
+- Photos are automatically downscaled before saving to conserve storage
 
-## 🛠 Technologie
+## 🛠 Tech stack
 
-| Warstwa | Rozwiązanie |
+| Layer | Technology |
 |---|---|
-| Frontend | HTML + CSS + czysty JavaScript (jeden plik, zero frameworków) |
-| Logowanie | Firebase Authentication |
-| Baza danych | Firebase Realtime Database |
+| Frontend | HTML + CSS + vanilla JavaScript (single file, zero frameworks) |
+| Authentication | Firebase Authentication |
+| Database | Firebase Realtime Database |
 | Hosting | GitHub Pages |
 
-Całość mieści się w pojedynczym pliku `index.html` — bez procesu budowania, bez zależności do instalowania. Interfejs aplikacji jest w języku angielskim, a układ dostosowuje się do ekranu telefonu.
+The whole app fits in a single `index.html` — no build step, no dependencies to install. The layout is responsive and works well on phones.
 
-## 🚀 Uruchomienie
+## 🚀 Getting started
 
-Aplikacja działa pod adresem GitHub Pages tego repozytorium. Bez zalogowania widoczny jest tylko ekran logowania — treści są prywatne.
+The app runs at this repository's GitHub Pages URL. Without signing in, only the login screen is visible — all content is private.
 
-Aby uruchomić własną kopię:
+To run your own copy:
 
-1. Sklonuj repozytorium i utwórz darmowy projekt w [Firebase](https://console.firebase.google.com) (plan Spark).
-2. Włącz **Authentication** (e-mail/hasło) i dodaj użytkownika.
-3. Utwórz **Realtime Database** z regułami ograniczającymi dostęp do `users/$uid`.
-4. Wklej swoją konfigurację `firebaseConfig` w `index.html`.
-5. Opublikuj plik na dowolnym hostingu statycznym (np. GitHub Pages).
+1. Clone the repository and create a free [Firebase](https://console.firebase.google.com) project (Spark plan).
+2. Enable **Authentication** (email/password) and add a user.
+3. Create a **Realtime Database** with rules restricting access to `users/$uid`.
+4. Paste your `firebaseConfig` into `index.html`.
+5. Publish the file on any static hosting (e.g. GitHub Pages).
